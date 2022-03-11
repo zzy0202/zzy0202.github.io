@@ -485,7 +485,7 @@ p">
                 <h2 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h2><p>padding(内边距)</p>
 <p>margin(外边距)</p>
 <p>一个盒子模型从内到外依次为margin-&gt; border -&gt; padding -&gt; content </p>
-<p><img src="./%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B.jpg" alt="盒子模型"></p>
+<p><img src="%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B.jpg" alt="行高定义图"></p>
 <h4 id="内边距"><a href="#内边距" class="headerlink" title="内边距"></a>内边距</h4><p>padding: 上 右 下 左 (依次顺序)</p>
 <ul>
 <li><p>padding是指 边框与内容之间的距离。</p>
@@ -499,7 +499,7 @@ p">
 <li>高度=content+padding-top+padding-bottm+border-top+bodder-bottom</li>
 </ul>
 <p>如果使用padding可能会导致盒子被撑大的情况，这样我们便要使用box-sizing：border-box就好了，这样在设置盒子高宽度时也会吧border和padding给算进去，然后自动调适content内容的高宽度</p>
-<h4 id="外边距"><a href="#外边距" class="headerlink" title="外边距"></a>外边距</h4><p><img src="./%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/18margin%E5%A4%96%E8%BE%B9%E8%B7%9D.png" alt="margin外边距"></p>
+<h4 id="外边距"><a href="#外边距" class="headerlink" title="外边距"></a>外边距</h4><p><img src="18margin%E5%A4%96%E8%BE%B9%E8%B7%9D.png" alt="margin外边距"></p>
 <h5 id="让盒子居中显示的方法"><a href="#让盒子居中显示的方法" class="headerlink" title="让盒子居中显示的方法"></a>让盒子居中显示的方法</h5><ul>
 <li>盒子必须先设置了宽度</li>
 <li>然后给左右边距都设置auto</li>
@@ -523,7 +523,7 @@ p">
 <li><p>取两个值中的较大者这种现象被称为相邻块元素垂直外边距的合并（也称外边距塌陷）。</p>
 </li>
 </ul>
-<p><img src="./%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/www.png" alt="外边距塌陷"></p>
+<p><img src="www.png" alt="外边距塌陷"></p>
 <p><strong>解决方案：尽量给只给一个盒子添加margin值。</strong></p>
 <h4 id="嵌套块元素垂直外边距的合并（塌陷）"><a href="#嵌套块元素垂直外边距的合并（塌陷）" class="headerlink" title="嵌套块元素垂直外边距的合并（塌陷）"></a>嵌套块元素垂直外边距的合并（塌陷）</h4><ul>
 <li><p>对于两个嵌套关系的块元素，如果父元素没有上内边距及边框 </p>
@@ -533,7 +533,7 @@ p">
 <li><p>合并后的外边距为两者中的较大者</p>
 </li>
 </ul>
-<p><img src="./%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/n.png" alt="外边距塌陷"></p>
+<p><img src="n.png" alt="外边距塌陷"></p>
 <p>所以能看到padding和margin的使用会导致一些问题..，建议根据以下的优先级来决定使用谁</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">width &gt; padding &gt; margin</span><br></pre></td></tr></table></figure>
 

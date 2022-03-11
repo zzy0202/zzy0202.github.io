@@ -4,14 +4,14 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Node.js——初识1, 熊熊の小世界">
-    <meta name="description" content="关于Node.jsNPM安装第三方库安装方法全局安装    
+    <meta name="keywords" content="NodeJS——初识1, 熊熊の小世界">
+    <meta name="description" content="NodeJSNPM安装第三方库安装方法全局安装    
 1npm install express -g
 
 局部安装
 1npm install express
 
-局部安装只会在当前终端的路径进行安装，并且生成一个node_modules">
+局部安装只会在当前终端的路径进行安装，并且生成一个node_modules文件；">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -23,7 +23,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Node.js——初识1 | 熊熊の小世界</title>
+    <title>NodeJS——初识1 | 熊熊の小世界</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -315,12 +315,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Node.js——初识1</h1>
+                    <h1 class="description center-align post-title">NodeJS——初识1</h1>
                 </div>
             </div>
         </div>
@@ -482,7 +482,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="关于Node-js"><a href="#关于Node-js" class="headerlink" title="关于Node.js"></a>关于Node.js</h2><h3 id="NPM安装第三方库"><a href="#NPM安装第三方库" class="headerlink" title="NPM安装第三方库"></a>NPM安装第三方库</h3><h4 id="安装方法"><a href="#安装方法" class="headerlink" title="安装方法"></a>安装方法</h4><p><strong>全局安装</strong>    </p>
+                <h2 id="NodeJS"><a href="#NodeJS" class="headerlink" title="NodeJS"></a>NodeJS</h2><h3 id="NPM安装第三方库"><a href="#NPM安装第三方库" class="headerlink" title="NPM安装第三方库"></a>NPM安装第三方库</h3><h4 id="安装方法"><a href="#安装方法" class="headerlink" title="安装方法"></a>安装方法</h4><p><strong>全局安装</strong>    </p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install express -g</span><br></pre></td></tr></table></figure>
 
 <p><strong>局部安装</strong></p>
@@ -520,7 +520,82 @@
 <p><strong>目录的处理</strong></p>
 <p><code>require(./test)</code>，假如在目录下并没有test.js、test.json、test.node、的文件夹，此时便会把test当做目录名去寻找，如果有test目录则进入该目录，并到该目录下的package.json里寻找main所指定的入口文件，如果没有指定的入口文件则会依次自动寻找该目录下的index.js、index.json、index.node</p>
 <p>具体的加载策略可以看以下图所示</p>
-<p><img src="https://cdn.nlark.com/yuque/0/2021/png/22620727/1636605967337-7aca6570-be7a-48e9-8394-8867b205402c.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_14,text_6ICB6ZmI5omT56CB,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10" alt="image.png"></p>
+<p><img src="Node%E5%AF%BB%E6%89%BE%E6%A8%A1%E5%9D%97%E6%B5%81%E7%A8%8B%E5%9B%BE.png" alt="require搜索流程图"></p>
+<h3 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h3><p>在这个NodeJS的文件读取提供了同步和异步两种方式供选择，在使用前必须把fs模块引用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const fs = require(&#x27;fs&#x27;);</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="读取文件内容"><a href="#读取文件内容" class="headerlink" title="读取文件内容"></a>读取文件内容</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fs.readFile(&#x27;./xxx.txt&#x27;,(err,data)&#123;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>第一个参数为读取文件的路径；第二个为读取的文件内容</p>
+<h4 id="写入文件内容"><a href="#写入文件内容" class="headerlink" title="写入文件内容"></a>写入文件内容</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">fs.writeFile(&#x27;./index.txt&#x27;,str,err =&gt; &#123;</span><br><span class="line">	if(err) &#123;</span><br><span class="line">		throw &#x27;写入文件失败&#x27;;</span><br><span class="line">	&#125;</span><br><span class="line">	console.log(&#x27;写入文件成功!&#x27;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>必须有三个参数，第一个为写入文件路径，若不存在该文件，则会在指定的路径创建一个新文件</p>
+<p>；第二个参数为写入的内容；第三个为回调函数</p>
+<h4 id="读取文件信息"><a href="#读取文件信息" class="headerlink" title="读取文件信息"></a>读取文件信息</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">fs.stat(&#x27;./hello.txt&#x27;,(err, stats) =&gt; &#123;</span><br><span class="line">	if(err) &#123;</span><br><span class="line">		throw &#x27;失败&#x27;;</span><br><span class="line">	&#125;</span><br><span class="line">	console.log(stats);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>回调函数里的stats为文件信息，可以知道文件的uid，是否为文件等状态</p>
+<h4 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">fs.unlink(&#x27;./index.txt&#x27;,err =&gt; &#123;</span><br><span class="line">	if(err) &#123;</span><br><span class="line">		throw &#x27;删除失败&#x27;;</span><br><span class="line">	&#125;</span><br><span class="line">	console.log(&#x27;删除成功&#x27;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="读取该目录下的所有文件"><a href="#读取该目录下的所有文件" class="headerlink" title="读取该目录下的所有文件"></a>读取该目录下的所有文件</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fs.readdir(&#x27;./test&#x27;,(err, files) =&gt; &#123;</span><br><span class="line">	console.log(files);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="创建一个空目录"><a href="#创建一个空目录" class="headerlink" title="创建一个空目录"></a>创建一个空目录</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">fs.mkdir(&#x27;./haha&#x27;,err =&gt; &#123;</span><br><span class="line">	if(err) &#123;</span><br><span class="line">		throw &#x27;失败&#x27;;</span><br><span class="line">	&#125;</span><br><span class="line">	console.log(&#x27;成功！&#x27;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="删除一个空目录"><a href="#删除一个空目录" class="headerlink" title="删除一个空目录"></a>删除一个空目录</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">fs.rmdir(&#x27;./haha&#x27;,err =&gt; &#123;</span><br><span class="line">	if(err) &#123;</span><br><span class="line">		throw &#x27;失败&#x27;;</span><br><span class="line">	&#125;</span><br><span class="line">	console.log(&#x27;成功！&#x27;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="递归删除非空文件夹"><a href="#递归删除非空文件夹" class="headerlink" title="递归删除非空文件夹"></a>递归删除非空文件夹</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">function removeRecursion(path) &#123;</span><br><span class="line">	//先读取当前路劲下的所有文件和目录，如果是目录就递归进入删除；如果是文件就直接删除</span><br><span class="line">	let arr = [];</span><br><span class="line">	arr = fs.readdirSync(path);</span><br><span class="line">	arr.forEach((item)=&gt; &#123;</span><br><span class="line">		let isFile = false;</span><br><span class="line">		let childrenPath = path+&#x27;/&#x27;+item;</span><br><span class="line">		isFile = fs.statSync(childrenPath);</span><br><span class="line">		isFile = isFile.isFile();</span><br><span class="line">		if(isFile) &#123;</span><br><span class="line">			fs.rmSync(childrenPath);</span><br><span class="line">		&#125;</span><br><span class="line">		else &#123;</span><br><span class="line">			removeRecursion(childrenPath);</span><br><span class="line">			fs.rmdirSync(childrenPath);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;</span><br><span class="line">removeRecursion(&#x27;./test&#x27;);</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="事件循环"><a href="#事件循环" class="headerlink" title="事件循环"></a>事件循环</h3><p><img src="%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF.jpg" alt="事件循环示意图"></p>
+<p>类似JS里的触发事件，有一个事件驱动程序不断循环判断是否有Events被触发，如果有的话则调用其回调函数</p>
+<p><strong>1. 引用events模块</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const events = require(&#x27;events&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p><strong>2. 绑定事件名字及其回调函数</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let eventEmitter = new events.EventEmitter();</span><br><span class="line">eventEmitter.on(&#x27;eventNmae&#x27;,handlerFunction);</span><br></pre></td></tr></table></figure>
+
+<p><strong>3. 触发事件</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eventEmitter.emit(&#x27;eventName&#x27;);</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="进程与多线程"><a href="#进程与多线程" class="headerlink" title="进程与多线程"></a>进程与多线程</h3><h4 id="关于进程以及怎么创建服务器"><a href="#关于进程以及怎么创建服务器" class="headerlink" title="关于进程以及怎么创建服务器"></a>关于进程以及怎么创建服务器</h4><p>进程就是关于计算机某数据集合的一次运行活动，在NodeJS里要体验进程的话，可以先创建一个Server(服务器)当做服务器进程</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const http = require(&#x27;http&#x27;);</span><br><span class="line">let server = http.createServer();</span><br><span class="line">server.listen(3000,()=&gt;&#123;</span><br><span class="line">	console.log(&#x27;创建服务器进程成功&#x27;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>3000为在localhost里的端口后，第二个参数为回调函数。</p>
+<p>接下来要对server进行事件监听，每当有请求时就根据请求头数据来返回相对应的数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">server.on(&#x27;request&#x27;,(req,res)=&gt;&#123;</span><br><span class="line">	</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>req为请求数据；res为返回数据</p>
+<h4 id="怎么创建线程"><a href="#怎么创建线程" class="headerlink" title="怎么创建线程"></a>怎么创建线程</h4><p><strong>先对线程模块进行引用</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const fork = require(&#x27;child_process&#x27;).fork;</span><br></pre></td></tr></table></figure>
+
+<p><strong>创建线程</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let add = fork(&#x27;./xxx.js&#x27;);</span><br><span class="line">//选择这个文件路径的文件作为子线程</span><br></pre></td></tr></table></figure>
+
+<p><strong>杀死进程</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">add.killed();</span><br></pre></td></tr></table></figure>
+
+<h3 id="进程之间的通信"><a href="#进程之间的通信" class="headerlink" title="进程之间的通信"></a>进程之间的通信</h3><p><strong>父进程.js  (注意观察代码左边的顺序)</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">add.send(message)	//发送message数据给子进程   1. </span><br><span class="line">add.on(&#x27;message&#x27;,()=&gt; &#123;                      4.</span><br><span class="line">	//接收子进程返回的数据</span><br><span class="line">	add.killed();</span><br><span class="line">&#125;)                            </span><br></pre></td></tr></table></figure>
+
+<p><strong>子进程.js</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">process.on(&#x27;message&#x27;,(message)=&gt; &#123;     2. </span><br><span class="line">	//子进程进行监听，如果有父进程发送数据到子进程</span><br><span class="line">&#125;)</span><br><span class="line">// do something</span><br><span class="line">process.send(result);                   3.</span><br></pre></td></tr></table></figure>
+
+
+
 
                 
             </div>
@@ -769,9 +844,9 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Node.js——初识1">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="NodeJS——初识1">
                         
-                        <span class="card-title">Node.js——初识1</span>
+                        <span class="card-title">NodeJS——初识1</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
