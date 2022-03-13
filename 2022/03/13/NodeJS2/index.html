@@ -4,14 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="NodeJS——初识1, 熊熊の小世界">
-    <meta name="description" content="NodeJSNPM安装第三方库安装方法全局安装    
-1npm install express -g
+    <meta name="keywords" content="NodeJS——初识2(路径模块,从零搭建服务器), 熊熊の小世界">
+    <meta name="description" content="NodeJS使用路径模块引入以及使用1const path = require(&amp;#x27;path&amp;#x27;)
 
-局部安装
-1npm install express
-
-局部安装只会在当前终端的路径进行安装，并且生成一个node_modules文件；">
+路径合并12345let path1 = &amp;#x27;/hello&amp;#x27;;let path2 = &amp;#x27;nex">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -23,7 +19,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>NodeJS——初识1 | 熊熊の小世界</title>
+    <title>NodeJS——初识2(路径模块,从零搭建服务器) | 熊熊の小世界</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -315,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">NodeJS——初识1</h1>
+                    <h1 class="description center-align post-title">NodeJS——初识2(路径模块,从零搭建服务器)</h1>
                 </div>
             </div>
         </div>
@@ -461,7 +457,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-03-09
+                    2022-03-13
                 </div>
                 
 
@@ -482,119 +478,53 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="NodeJS"><a href="#NodeJS" class="headerlink" title="NodeJS"></a>NodeJS</h2><h3 id="NPM安装第三方库"><a href="#NPM安装第三方库" class="headerlink" title="NPM安装第三方库"></a>NPM安装第三方库</h3><h4 id="安装方法"><a href="#安装方法" class="headerlink" title="安装方法"></a>安装方法</h4><p><strong>全局安装</strong>    </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install express -g</span><br></pre></td></tr></table></figure>
+                <h2 id="NodeJS使用"><a href="#NodeJS使用" class="headerlink" title="NodeJS使用"></a>NodeJS使用</h2><h3 id="路径模块"><a href="#路径模块" class="headerlink" title="路径模块"></a>路径模块</h3><h4 id="引入以及使用"><a href="#引入以及使用" class="headerlink" title="引入以及使用"></a>引入以及使用</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const path = require(&#x27;path&#x27;)</span><br></pre></td></tr></table></figure>
 
-<p><strong>局部安装</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install express</span><br></pre></td></tr></table></figure>
+<h5 id="路径合并"><a href="#路径合并" class="headerlink" title="路径合并"></a>路径合并</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let path1 = &#x27;/hello&#x27;;</span><br><span class="line">let path2 = &#x27;next&#x27;</span><br><span class="line">let path3 = &#x27;test.txt&#x27;;</span><br><span class="line">let path4 = path.join(path1,path2,path3);</span><br><span class="line">console.log(path4)			\hello\next\test.txt</span><br></pre></td></tr></table></figure>
 
-<p>局部安装只会在当前终端的路径进行安装，并且生成一个node_modules文件；全局安装则会安装在Node文件夹下</p>
-<p><strong>安装指定版本的第三方包</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install express@1.0.0</span><br></pre></td></tr></table></figure>
+<h5 id="获取绝对路径"><a href="#获取绝对路径" class="headerlink" title="获取绝对路径"></a>获取绝对路径</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let path1 = &#x27;/hello&#x27;;</span><br><span class="line">let path2 = &#x27;next&#x27;</span><br><span class="line">let path3 = &#x27;test.txt&#x27;;</span><br><span class="line">let path4 = path.join(path1,path2,path3);</span><br><span class="line">let absolute = path.resolve(path4);</span><br><span class="line">console.log(absolute);</span><br><span class="line">//		C:\hello\next\test.txt</span><br></pre></td></tr></table></figure>
 
-<p>只需要在后面加上了@x.x.x的指定版本就行</p>
-<h4 id="发布代码到Node"><a href="#发布代码到Node" class="headerlink" title="发布代码到Node"></a>发布代码到Node</h4><ol>
-<li>使用<code>npm add user</code>命令行注册一个NodeJs个人账户</li>
-<li>使用<code>npm init</code>初始化你的项目</li>
-<li>根据对应的要求输入包名，包描述，版本，依赖等</li>
-<li>开始在package.json里main指定的文件编写代码</li>
-<li>编写完毕后打开中断输入<code>npm publish</code></li>
-<li>发布成功</li>
-</ol>
-<h3 id="NodeJS模块"><a href="#NodeJS模块" class="headerlink" title="NodeJS模块"></a>NodeJS模块</h3><p>NodeJs的应用模块借鉴了CommonJS里的模块规范，因此它们的模块引用方法有点相似</p>
-<h4 id="CommonJS的模块规范"><a href="#CommonJS的模块规范" class="headerlink" title="CommonJS的模块规范"></a>CommonJS的模块规范</h4><h5 id="模块引用"><a href="#模块引用" class="headerlink" title="模块引用"></a>模块引用</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const express = require(express);</span><br></pre></td></tr></table></figure>
+<h5 id="获取相对路径"><a href="#获取相对路径" class="headerlink" title="获取相对路径"></a>获取相对路径</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let relativePath = path.relative(&#x27;&#x27;)</span><br></pre></td></tr></table></figure>
 
-<h5 id="模块定义-即导出"><a href="#模块定义-即导出" class="headerlink" title="模块定义(即导出)"></a>模块定义(即导出)</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">let name = &#x27;熊本熊本熊&#x27;;</span><br><span class="line">let obj = (&#123;</span><br><span class="line">	foo:&#x27;bar&#x27;,</span><br><span class="line">&#125;)</span><br><span class="line">module.exports = (&#123;</span><br><span class="line">	name,</span><br><span class="line">	obj,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h5 id="获取dirname-路径名字"><a href="#获取dirname-路径名字" class="headerlink" title="获取dirname(路径名字)"></a>获取dirname(路径名字)</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let path1 = &#x27;/hello&#x27;;</span><br><span class="line">let path2 = &#x27;next&#x27;</span><br><span class="line">let path3 = &#x27;test.txt&#x27;;</span><br><span class="line">let path4 = path.join(path1,path2,path3);</span><br><span class="line">let dirname = path.dirname(path4);</span><br><span class="line">console.log(dirname)</span><br><span class="line">//		\hello\next</span><br></pre></td></tr></table></figure>
 
-<p>这样在其他模块里便能引入该模块所定义的变量</p>
-<h4 id="Node的模块实现"><a href="#Node的模块实现" class="headerlink" title="Node的模块实现"></a>Node的模块实现</h4><h5 id="模块缓存"><a href="#模块缓存" class="headerlink" title="模块缓存"></a>模块缓存</h5><p>无论是内建的模块还是第三方下载的，只要在一次加载后都会缓存起来，等下次再引用时，</p>
-<p>直接在缓存里寻找。被缓存的是模块编译和执行后的对象，因此加载是最快的</p>
-<h5 id="路径分析"><a href="#路径分析" class="headerlink" title="路径分析"></a>路径分析</h5><ul>
-<li>内建模块：如<code>fs</code>这些模块，这些加载是最快的</li>
-<li>绝对路径：略</li>
-<li>相对路径：略</li>
-<li>自定义模块标识：例如<code>express</code>并不是内建模块，因此不能像第一种这样直接编译。但在引入时也不用写上文件路径，Node有自带的算法到Node_modules的文件夹里寻找</li>
+<h5 id="获取basename-就是获取文件名和文件后缀"><a href="#获取basename-就是获取文件名和文件后缀" class="headerlink" title="获取basename(就是获取文件名和文件后缀)"></a>获取basename(就是获取文件名和文件后缀)</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let path1 = &#x27;/hello&#x27;;</span><br><span class="line">let path2 = &#x27;next&#x27;</span><br><span class="line">let path3 = &#x27;test.txt&#x27;;</span><br><span class="line">let path4 = path.join(path1,path2,path3);</span><br><span class="line">let basename = path.basename(path4);</span><br><span class="line">console.log(basename)</span><br><span class="line">//		test.txt</span><br></pre></td></tr></table></figure>
+
+<h5 id="获取ext-文件后缀"><a href="#获取ext-文件后缀" class="headerlink" title="获取ext(文件后缀)"></a>获取ext(文件后缀)</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let path1 = &#x27;/hello&#x27;;</span><br><span class="line">let path2 = &#x27;next&#x27;</span><br><span class="line">let path3 = &#x27;test.txt&#x27;;</span><br><span class="line">let path4 = path.join(path1,path2,path3);</span><br><span class="line">let ext = path.extname(path4);</span><br><span class="line">console.log(ext)</span><br><span class="line">//  	.txt</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="网络模块"><a href="#网络模块" class="headerlink" title="网络模块"></a>网络模块</h3><h4 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h4><ul>
+<li>它是用于从万维网服务器传输超文本资料到本地电脑浏览器的一个传送协议</li>
+<li>HTTP是基于TCP/IP通信协议来传递数据</li>
 </ul>
-<h5 id="文件定位"><a href="#文件定位" class="headerlink" title="文件定位"></a>文件定位</h5><p><strong>文件扩展名</strong></p>
-<p>模块引用的方法可以不带文件扩展名，但Node会自动依次加上<code>.js、.json、.node</code>去寻找对应的文件名；可以通过加上文件扩展名来加快文件定位的速度</p>
-<p><strong>目录的处理</strong></p>
-<p><code>require(./test)</code>，假如在目录下并没有test.js、test.json、test.node、的文件夹，此时便会把test当做目录名去寻找，如果有test目录则进入该目录，并到该目录下的package.json里寻找main所指定的入口文件，如果没有指定的入口文件则会依次自动寻找该目录下的index.js、index.json、index.node</p>
-<p>具体的加载策略可以看以下图所示</p>
-<p><img src="Node%E5%AF%BB%E6%89%BE%E6%A8%A1%E5%9D%97%E6%B5%81%E7%A8%8B%E5%9B%BE.png" alt="require搜索流程图"></p>
-<h3 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h3><p>在这个NodeJS的文件读取提供了同步和异步两种方式供选择，在使用前必须把fs模块引用</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const fs = require(&#x27;fs&#x27;);</span><br></pre></td></tr></table></figure>
+<p> <img src="HTTP%E5%9B%BE%E7%89%87.png" alt="HTTP"></p>
+<p><strong>特点</strong></p>
+<ul>
+<li>简单快捷：客户端向服务器请求时，只需要有url和请求方法就行了。常用的请求方法有GET，POST，HEAD</li>
+<li>灵活：HTTP允许传输任何类型的数据，只需要在Content-Type注明就好了</li>
+<li>无连接：意思是限制每一次连接只处理一次请求，服务器处理完请求并在客户端发送收到数据的应答后，即断开连接，节省时间</li>
+<li>无状态：即HTTP没有记忆功能，在第二次发送请求时它并不会记得第一次发送请求的任何数据</li>
+</ul>
+<h4 id="HTTP请求消息构造"><a href="#HTTP请求消息构造" class="headerlink" title="HTTP请求消息构造"></a>HTTP请求消息构造</h4><p><img src="NodeJS2%5C%E8%AF%B7%E6%B1%82%E6%9E%84%E9%80%A0.png"></p>
+<p>主要由是个组成，请求行，请求头和请求数据</p>
+<ol>
+<li><p>请求头主要由请求方法，请求url和请求协议组成</p>
+</li>
+<li><p>请求头可以设置Content-Type这些数据</p>
+</li>
+<li><p>请求数据可以为任何数据</p>
+</li>
+</ol>
+<p>**注意每一个部分都由\r\n来进行分割</p>
+<h4 id="HTTP相应构造"><a href="#HTTP相应构造" class="headerlink" title="HTTP相应构造"></a>HTTP相应构造</h4><p>可以看到基本上和请求一样</p>
+<p><img src="NodeJS2%5C%E7%9B%B8%E5%BA%94%E6%9E%84%E9%80%A0.png"></p>
+<p>​    </p>
+<h4 id="在NodeJS里使用HTTP请求响应头搭建一个服务器"><a href="#在NodeJS里使用HTTP请求响应头搭建一个服务器" class="headerlink" title="在NodeJS里使用HTTP请求响应头搭建一个服务器"></a>在NodeJS里使用HTTP请求响应头搭建一个服务器</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">const http = require(&#x27;http&#x27;);</span><br><span class="line">const fs = require(&#x27;fs&#x27;);</span><br><span class="line">const path = require(&#x27;path&#x27;);</span><br><span class="line">const net = require(&#x27;net&#x27;);</span><br><span class="line"></span><br><span class="line">const server = net.createServer(socket =&gt; &#123;</span><br><span class="line">	socket.on(&#x27;data&#x27;,(buffer)=&gt;&#123;</span><br><span class="line">		const str = buffer.toString();</span><br><span class="line">		console.log(str);</span><br><span class="line">		const data = &#x27;&lt;h1&gt;Hello World!&lt;/h1&gt;&#x27;</span><br><span class="line"></span><br><span class="line">		socket.write(&#x27;HTTP/1.1 200 ok&#x27;);		//状态行</span><br><span class="line">		socket.write(&#x27;\r\n&#x27;);</span><br><span class="line">		socket.write(&#x27;Content-Length:&#x27;+Buffer.from(data).length); </span><br><span class="line">		socket.write(&#x27;\r\n&#x27;);</span><br><span class="line">		socket.write(&#x27;content-type: text/html; charset=utf-8&#x27;);</span><br><span class="line">		socket.write(&#x27;\r\n&#x27;);</span><br><span class="line">		socket.write(&#x27;\r\n&#x27;);</span><br><span class="line">		socket.write(data);						//响应数据</span><br><span class="line">		socket.write(&#x27;\r\n&#x27;);</span><br><span class="line">		socket.end();</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">server.on(&#x27;connection&#x27;,()=&gt;&#123;</span><br><span class="line">	console.log(&#x27;连接上了服务器&#x27;)</span><br><span class="line">&#125;)</span><br><span class="line">server.on(&#x27;close&#x27;,()=&gt;&#123;</span><br><span class="line">	console.log(&#x27;断开了服务器&#x27;)</span><br><span class="line">&#125;)</span><br><span class="line">server.listen(3000,()=&gt;&#123;</span><br><span class="line">	console.log(&#x27;服务器开启&#x27;,&#x27;http://localhost:3000&#x27;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
 
 
-<h4 id="读取文件内容"><a href="#读取文件内容" class="headerlink" title="读取文件内容"></a>读取文件内容</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fs.readFile(&#x27;./xxx.txt&#x27;,(err,data)&#123;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p>第一个参数为读取文件的路径；第二个为读取的文件内容</p>
-<h4 id="写入文件内容"><a href="#写入文件内容" class="headerlink" title="写入文件内容"></a>写入文件内容</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">fs.writeFile(&#x27;./index.txt&#x27;,str,err =&gt; &#123;</span><br><span class="line">	if(err) &#123;</span><br><span class="line">		throw &#x27;写入文件失败&#x27;;</span><br><span class="line">	&#125;</span><br><span class="line">	console.log(&#x27;写入文件成功!&#x27;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p>必须有三个参数，第一个为写入文件路径，若不存在该文件，则会在指定的路径创建一个新文件</p>
-<p>；第二个参数为写入的内容；第三个为回调函数</p>
-<h4 id="读取文件信息"><a href="#读取文件信息" class="headerlink" title="读取文件信息"></a>读取文件信息</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">fs.stat(&#x27;./hello.txt&#x27;,(err, stats) =&gt; &#123;</span><br><span class="line">	if(err) &#123;</span><br><span class="line">		throw &#x27;失败&#x27;;</span><br><span class="line">	&#125;</span><br><span class="line">	console.log(stats);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p>回调函数里的stats为文件信息，可以知道文件的uid，是否为文件等状态</p>
-<h4 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">fs.unlink(&#x27;./index.txt&#x27;,err =&gt; &#123;</span><br><span class="line">	if(err) &#123;</span><br><span class="line">		throw &#x27;删除失败&#x27;;</span><br><span class="line">	&#125;</span><br><span class="line">	console.log(&#x27;删除成功&#x27;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="读取该目录下的所有文件"><a href="#读取该目录下的所有文件" class="headerlink" title="读取该目录下的所有文件"></a>读取该目录下的所有文件</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fs.readdir(&#x27;./test&#x27;,(err, files) =&gt; &#123;</span><br><span class="line">	console.log(files);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="创建一个空目录"><a href="#创建一个空目录" class="headerlink" title="创建一个空目录"></a>创建一个空目录</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">fs.mkdir(&#x27;./haha&#x27;,err =&gt; &#123;</span><br><span class="line">	if(err) &#123;</span><br><span class="line">		throw &#x27;失败&#x27;;</span><br><span class="line">	&#125;</span><br><span class="line">	console.log(&#x27;成功！&#x27;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="删除一个空目录"><a href="#删除一个空目录" class="headerlink" title="删除一个空目录"></a>删除一个空目录</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">fs.rmdir(&#x27;./haha&#x27;,err =&gt; &#123;</span><br><span class="line">	if(err) &#123;</span><br><span class="line">		throw &#x27;失败&#x27;;</span><br><span class="line">	&#125;</span><br><span class="line">	console.log(&#x27;成功！&#x27;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="递归删除非空文件夹"><a href="#递归删除非空文件夹" class="headerlink" title="递归删除非空文件夹"></a>递归删除非空文件夹</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">function removeRecursion(path) &#123;</span><br><span class="line">	//先读取当前路劲下的所有文件和目录，如果是目录就递归进入删除；如果是文件就直接删除</span><br><span class="line">	let arr = [];</span><br><span class="line">	arr = fs.readdirSync(path);</span><br><span class="line">	arr.forEach((item)=&gt; &#123;</span><br><span class="line">		let isFile = false;</span><br><span class="line">		let childrenPath = path+&#x27;/&#x27;+item;</span><br><span class="line">		isFile = fs.statSync(childrenPath);</span><br><span class="line">		isFile = isFile.isFile();</span><br><span class="line">		if(isFile) &#123;</span><br><span class="line">			fs.rmSync(childrenPath);</span><br><span class="line">		&#125;</span><br><span class="line">		else &#123;</span><br><span class="line">			removeRecursion(childrenPath);</span><br><span class="line">			fs.rmdirSync(childrenPath);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;</span><br><span class="line">removeRecursion(&#x27;./test&#x27;);</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="事件循环"><a href="#事件循环" class="headerlink" title="事件循环"></a>事件循环</h3><p><img src="%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF.jpg" alt="事件循环示意图"></p>
-<p>类似JS里的触发事件，有一个事件驱动程序不断循环判断是否有Events被触发，如果有的话则调用其回调函数</p>
-<p><strong>1. 引用events模块</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const events = require(&#x27;events&#x27;)</span><br></pre></td></tr></table></figure>
-
-<p><strong>2. 绑定事件名字及其回调函数</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let eventEmitter = new events.EventEmitter();</span><br><span class="line">eventEmitter.on(&#x27;eventNmae&#x27;,handlerFunction);</span><br></pre></td></tr></table></figure>
-
-<p><strong>3. 触发事件</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eventEmitter.emit(&#x27;eventName&#x27;);</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h3 id="进程与多线程"><a href="#进程与多线程" class="headerlink" title="进程与多线程"></a>进程与多线程</h3><h4 id="关于进程以及怎么创建服务器"><a href="#关于进程以及怎么创建服务器" class="headerlink" title="关于进程以及怎么创建服务器"></a>关于进程以及怎么创建服务器</h4><p>进程就是关于计算机某数据集合的一次运行活动，在NodeJS里要体验进程的话，可以先创建一个Server(服务器)当做服务器进程</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const http = require(&#x27;http&#x27;);</span><br><span class="line">let server = http.createServer();</span><br><span class="line">server.listen(3000,()=&gt;&#123;</span><br><span class="line">	console.log(&#x27;创建服务器进程成功&#x27;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p>3000为在localhost里的端口后，第二个参数为回调函数。</p>
-<p>接下来要对server进行事件监听，每当有请求时就根据请求头数据来返回相对应的数据</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">server.on(&#x27;request&#x27;,(req,res)=&gt;&#123;</span><br><span class="line">	</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p>req为请求数据；res为返回数据</p>
-<h4 id="怎么创建线程"><a href="#怎么创建线程" class="headerlink" title="怎么创建线程"></a>怎么创建线程</h4><p><strong>先对线程模块进行引用</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const fork = require(&#x27;child_process&#x27;).fork;</span><br></pre></td></tr></table></figure>
-
-<p><strong>创建线程</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let add = fork(&#x27;./xxx.js&#x27;);</span><br><span class="line">//选择这个文件路径的文件作为子线程</span><br></pre></td></tr></table></figure>
-
-<p><strong>杀死进程</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">add.killed();</span><br></pre></td></tr></table></figure>
-
-<h3 id="进程之间的通信"><a href="#进程之间的通信" class="headerlink" title="进程之间的通信"></a>进程之间的通信</h3><p><strong>父进程.js  (注意观察代码左边的顺序)</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">add.send(message)	//发送message数据给子进程   1. </span><br><span class="line">add.on(&#x27;message&#x27;,()=&gt; &#123;                      4.</span><br><span class="line">	//接收子进程返回的数据</span><br><span class="line">	add.killed();</span><br><span class="line">&#125;)                            </span><br></pre></td></tr></table></figure>
-
-<p><strong>子进程.js</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">process.on(&#x27;message&#x27;,(message)=&gt; &#123;     2. </span><br><span class="line">	//子进程进行监听，如果有父进程发送数据到子进程</span><br><span class="line">&#125;)</span><br><span class="line">// do something</span><br><span class="line">process.send(result);                   3.</span><br></pre></td></tr></table></figure>
-
-
+<h3 id="从零搭建一个静态服务器"><a href="#从零搭建一个静态服务器" class="headerlink" title="从零搭建一个静态服务器"></a>从零搭建一个静态服务器</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">const http = require(&#x27;http&#x27;);</span><br><span class="line">const fs = require(&#x27;fs&#x27;);</span><br><span class="line">const path = require(&#x27;path&#x27;);</span><br><span class="line">const net = require(&#x27;net&#x27;);</span><br><span class="line"></span><br><span class="line">let url = &#x27;./static&#x27;;</span><br><span class="line"></span><br><span class="line">let getContent = (ext) =&gt; &#123;</span><br><span class="line">	if(ext===&#x27;.png&#x27;) &#123;</span><br><span class="line">		return &#x27;image/png&#x27;</span><br><span class="line">	&#125;</span><br><span class="line">	else if(ext===&#x27;.jpg&#x27;) &#123;</span><br><span class="line">		return &#x27;image/jpeg&#x27;;</span><br><span class="line">	&#125;</span><br><span class="line">	else if(ext===&#x27;.mp4&#x27;) &#123;</span><br><span class="line">		return &#x27;video/mpeg4&#x27;;</span><br><span class="line">	&#125;</span><br><span class="line">	else if(ext===&#x27;.js&#x27;) &#123;</span><br><span class="line">		return &#x27;application/javascript&#x27;;</span><br><span class="line">	&#125;</span><br><span class="line">	else if(ext===&#x27;.css&#x27;) &#123;</span><br><span class="line">		return &quot;text/css; charset=utf-8&quot;;</span><br><span class="line">	&#125;</span><br><span class="line">	else if(ext===&#x27;.gif&#x27;) &#123;</span><br><span class="line">		return &#x27;image/gif&#x27;;</span><br><span class="line">	&#125;</span><br><span class="line">	else if(ext===&#x27;.html&#x27;) &#123;</span><br><span class="line">		return &quot;text/html;charset=UTF-8&quot;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const server = http.createServer();</span><br><span class="line">server.on(&#x27;request&#x27;,(req, res) =&gt; &#123;</span><br><span class="line">	let urlObj = path.parse(req.url);</span><br><span class="line">	if(req.url===&#x27;/&#x27;) &#123;</span><br><span class="line">		urlObj.base = &#x27;index.html&#x27;;</span><br><span class="line">		urlObj.ext = &#x27;.html&#x27;;</span><br><span class="line">		urlObj.name = &#x27;index&#x27;;</span><br><span class="line">	&#125;</span><br><span class="line">	console.log(urlObj);</span><br><span class="line">	let ContentType = getContent(urlObj.ext);</span><br><span class="line">	let filePath = url+urlObj.dir+&#x27;/&#x27;+urlObj.base;</span><br><span class="line">	let rs = fs.createReadStream(filePath);</span><br><span class="line">	if(ContentType) &#123;</span><br><span class="line">		rs.pipe(res);</span><br><span class="line">		rs.on(&#x27;error&#x27;,()=&gt;&#123;</span><br><span class="line">			rs = fs.createReadStream(url+&#x27;/error.html&#x27;);</span><br><span class="line">			rs.pipe(res);</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;</span><br><span class="line">	else &#123;</span><br><span class="line">		rs.on(&#x27;error&#x27;,()=&gt;&#123;</span><br><span class="line">			rs = fs.createReadStream(url+&#x27;/error.html&#x27;);</span><br><span class="line">			rs.pipe(res);</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">server.listen(3001,()=&gt;&#123;</span><br><span class="line">	console.log(&#x27;服务器已启动&#x27;,&#x27;http://localhost:3001&#x27;);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
                 
@@ -622,7 +552,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://zzy0202.github.io/2022/03/09/Node-js/">https://zzy0202.github.io/2022/03/09/Node-js/</a>
+                    <a href="https://zzy0202.github.io/2022/03/13/NodeJS2/">https://zzy0202.github.io/2022/03/13/NodeJS2/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -835,9 +765,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/03/13/NodeJS2/">
                     <div class="card-image">
@@ -855,9 +786,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-03-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -870,6 +801,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -888,13 +820,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/03/09/CSS%E5%A4%8D%E5%90%88%E9%80%89%E6%8B%A9%E5%99%A8%E5%92%8C%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/">
+                <a href="/2022/03/09/Node-js/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="CSS选择器和背景">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="NodeJS——初识1">
                         
-                        <span class="card-title">CSS选择器和背景</span>
+                        <span class="card-title">NodeJS——初识1</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -911,8 +843,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/web%E6%A0%B7%E5%BC%8F/" class="post-category">
-                                    web样式
+                            <a href="/categories/Node-js/" class="post-category">
+                                    Node.js
                                 </a>
                             
                             
@@ -922,8 +854,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/css/">
-                        <span class="chip bg-color">css</span>
+                    <a href="/tags/Node-js/">
+                        <span class="chip bg-color">Node.js</span>
                     </a>
                     
                 </div>
